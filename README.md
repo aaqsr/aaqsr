@@ -20,7 +20,7 @@ I am always learning new things and trying to write better code everytime I open
 
 I have been a Vim user for a while now, and have fallen in love with the command shell. The issue is, Emac's org-mode is just too tempting. And neovim's org-mode plugin isn't quite done yet. So for the past few weeks I have been trying to learn Emacs (specifically Doom because Evil mode is a godsend). Emacs, due to having way more features baked in than Vim, is a bit hard to wrap my head around, but after reading the manual for the third time, I think I'm starting to get it. Will upload my configuration soon-ish.
 
-<!-- ### my pins  -->
+
 
 ### what I enjoyed working on the most
 
