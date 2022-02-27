@@ -6,7 +6,7 @@
   
 </div> -->
 <div align="center">
-# hello! 👋😄
+  <h1>hello! 👋😄</h1>
 </div>
 
 Welcome to my github profile: a sandbox where I dump most of my code for collaborating, archiving, and syncing. 
