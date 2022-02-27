@@ -5,8 +5,9 @@
 <h2>aaqsr</h2>
   
 </div> -->
-
-# hello! 👋
+<div align="center">
+# hello! 👋😄
+</div>
 
 Welcome to my github profile: a sandbox where I dump most of my code for collaborating, archiving, and syncing. 
 
