@@ -13,19 +13,13 @@ Welcome to my github profile: a sandbox where I post most of my code for collabo
 
 I am studying Mathematics➕ and Computer Science🖥 in the University of Waterloo!
 
-### What I'm Learning Right Now 📚
+### What I Love Writing
 
-Right now I am working on learning Machine Learning, specifically Deep Learning, Convolutional Neural Networks, and Recurrent Neural Networks.
+My favourite language has to be C/C++. I love staying close to the hardware and building fast applications. I am, of course, also skilled in Python and Javascript.
 
-### What I Enjoyed Working on the Most ✍️
+### What I'm Working On Right Now 📚
 
-I would say my most enjoyable project was definitely working on the CCC with two of my friends. That was the first time I gave competitive programming a go, and I have to say the format is very addicting. Together we solved more than a decade's problems, and I learnt so much about optimisation and problem solving along the way.
-
-### What I Want to Work on in the Future 🤔
-
-There's a lot of technologies on the horizon right now. WebAssembly looks strong as ever, Microsoft's .NET MAUI looks elegant and powerful.
-
-I would say the one thing I want to learn more than anything however is Haskell. After using Racket and even React-Web, I have grown to love the paradigm of having pure functions. And I feel as though I should embrace it fully. Haskell and functional programming both deeply interest me, and I am excited to see the future of the functional paradigm.
+Right now I am working on low-level and embedded code. Always up for suggestions or invites to collab!
 
 <!--
 **aaqsr/aaqsr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
