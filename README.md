@@ -9,17 +9,19 @@
   <h1>Hello! 👋😄</h1>
 </div>
 
-Welcome to my github profile: a sandbox where I post most of my code for collaborating, archiving, and syncing. 
+Welcome to my github profile: a sandbox where I post most of my code for collaborating, archiving, and syncing.
 
-I am studying Mathematics➕ and Computer Science🖥 in the University of Waterloo!
+I am currently studying Mathematics➕ and Computer Science🖥 at the University of Waterloo!
 
 ### What I Love Working with
 
-My favourite language has to be C/C++. I love staying close to the hardware and building fast applications. I am, of course, also skilled in Python and Javascript.
+My favourite language is C/C++. I love staying close to the hardware and building fast real-time applications.
+I am also skilled in Python and Javascript.
 
 ### What I'm Working On Right Now 
 
-Right now I am working on low-level and embedded code. Always up for suggestions or invites to collab!
+Right now I am working on computer graphics, specifically interactive real-time simulations.
+Always up for suggestions or invites to collab!
 
 ### Stuff I have Worked with
 
