@@ -5,6 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awab Q.</title>
+
+    <!-- SEO Stuff. TODO! -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Awab Q.">
+    <meta property="og:description"
+        content="Computer Science student at University of Waterloo, specialising in Digital Hardware.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TODO.com">
+    <meta property="og:image" content="https://TODO.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Awab Q.">
+    <meta name="twitter:description" content="University of Waterloo CS student.">
+    <meta name="twitter:image" content="https://TODO.jpg">
+
+    <link rel="canonical" href="https://TODO.com/">
+
     <style>
         * {
             margin: 0;
@@ -13,6 +31,7 @@
         }
 
         :root {
+            /* Variables */
             --text-primary: #1a1a1a;
             --text-secondary: #4a5568;
             --text-muted: #718096;
@@ -21,21 +40,30 @@
             --text-pink3: rgb(222, 105, 170);
             --accent: var(--text-pink2);
             --accent-light: var(--text-pink3);
+            --body-bg: #f9fafb;
             --paper-bg: #fefefe;
             --code-bg: #f8fafc;
             --border-light: #e2e8f0;
             --shadow-paper: 0 2px 16px rgba(0, 0, 0, 0.08);
             --shadow-float: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+            counter-reset: section-counter;
+        }
+
+        html {
+            /* Common config. */
+            font-size: 18px;
+            font-family: Georgia, serif;
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: Georgia, serif;
+            font-size: 1rem;
             line-height: 1.7;
-            color: var(--text-primary);
-            background: #f9fafb;
-            font-size: 18px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            background: var(--body-bg);
+            overflow-x: hidden;
         }
 
         .sans {
@@ -46,35 +74,38 @@
             font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
         }
 
-        /* Layout */
-        .page {
+        /* Hero Section - Full Screen Landing */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background: #f9fafb;
+            position: relative;
+            padding: 0 4rem;
             max-width: 900px;
             margin: 0 auto;
-            background: var(--paper-bg);
-            box-shadow: var(--shadow-paper);
-            min-height: 100vh;
+            transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
-        .container {
-            padding: 0 4rem;
+        .hero-content {
+            max-width: 100%;
+            z-index: 2;
+            transform: translateY(0);
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
-        /* Header */
-        .header {
-            padding: 3rem 0 2rem;
-            border-bottom: 2px solid var(--accent);
-            color: var(--text-pink1);
-        }
-
-        .title {
+        .hero-title {
             font-size: 2.8rem;
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 1.5rem;
+            color: var(--text-pink1);
             letter-spacing: -0.02em;
         }
 
-        .subtitle {
+        .hero-subtitle {
             font-size: 1.4rem;
             color: var(--text-secondary);
             font-weight: 400;
@@ -82,17 +113,17 @@
             margin-bottom: 2rem;
         }
 
-        .meta {
+        .hero-meta {
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text-muted);
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        .meta-item {
+        .hero-meta-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -106,37 +137,55 @@
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
+        .scroll-indicator {
+            cursor: pointer;
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 5s infinite;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
+            transform: rotate(45deg);
         }
 
         /* Navigation */
         .nav {
-            position: sticky;
+            position: fixed;
             top: 0;
-            background: rgba(254, 254, 254, 0.95);
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(249, 250, 251, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-light);
-            margin: 0 -4rem 0rem -4rem;
             z-index: 100;
-            display: flex;
-            align-items: center;
-            min-height: 60px;
+            transform: translateY(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .nav.visible {
+            transform: translateY(0);
         }
 
         .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 0 4rem;
-            width: 100%;
             display: flex;
             align-items: center;
+            min-height: 60px;
         }
 
         .nav-links {
@@ -171,7 +220,24 @@
             background: var(--accent);
         }
 
-        /* Content Sections */
+        /* Main Content */
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--paper-bg);
+            box-shadow: var(--shadow-paper);
+            min-height: 100vh;
+        }
+
+        .container {
+            padding: 0 4rem;
+        }
+
+        .content {
+            padding: 4rem 0 4rem 0;
+        }
+
+        /* Section Styles */
         .section {
             margin-bottom: 4rem;
         }
@@ -179,7 +245,7 @@
         .section-title {
             font-size: 1.8rem;
             font-weight: 600;
-            margin: 2rem 0rem 1rem 0rem;
+            margin: 2rem 0 1rem 0;
             color: var(--text-primary);
             position: relative;
         }
@@ -193,10 +259,6 @@
             font-size: 1.2rem;
             color: var(--accent);
             font-weight: 500;
-        }
-
-        .content {
-            counter-reset: section-counter;
         }
 
         /* Footer */
@@ -218,34 +280,77 @@
             width: 0%;
             height: 2px;
             background: var(--accent);
-            z-index: 1000;
+            z-index: 1001;
             transition: width 0.1s ease;
+            opacity: 0;
         }
 
-        /* Responsive */
+        .reading-progress.visible {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-6px);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                font-size: 18px;
-                background: var(--paper-bg);
-            }
-
-            .page {
-                margin: 0;
-                box-shadow: none;
-                border-radius: 0;
-            }
-
-            .container {
+            .hero {
                 padding: 0 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
             }
 
             .nav-inner {
                 padding: 0 1.5rem;
-            }
-
-            .nav {
-                margin: 0 -1.5rem 2rem -1.5rem;
-                min-height: 50px;
             }
 
             .nav-links {
@@ -268,30 +373,15 @@
             }
 
             .nav-link.active {
-                background: rgba(220, 38, 38, 0.1);
+                background: rgba(184, 38, 118, 0.1);
             }
 
             .nav-link.active::after {
                 display: none;
             }
 
-            .header {
-                padding: 2rem 0 1.5rem;
-            }
-
-            .title {
-                font-size: 2.2rem;
-                line-height: 1.1;
-                margin-bottom: 1rem;
-            }
-
-            .subtitle {
-                font-size: 1.2rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .section {
-                margin-bottom: 3rem;
+            .container {
+                padding: 0 1.5rem;
             }
 
             .section-title {
@@ -302,64 +392,23 @@
                 display: none;
             }
 
-            .abstract {
-                padding: 1.5rem;
-                margin: 2rem 0;
-                font-size: 1rem;
-            }
-
-            .code-figure {
-                margin: 2rem -1.5rem;
-                border-radius: 0;
-            }
-
-            .code-header {
-                padding: 0.75rem 1.5rem;
-            }
-
-            .code-content {
-                padding: 1.5rem;
-                font-size: 0.8rem;
-                line-height: 1.6;
-            }
-
-            .projects {
-                gap: 2rem;
-                margin: 2rem 0;
-            }
-
-            .project-header {
-                padding: 1.5rem 1.5rem 1rem;
-            }
-
-            .project-title {
-                font-size: 1.2rem;
-            }
-
-            .project-tags {
-                padding: 0 1.5rem 1.5rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin: 2rem 0;
-            }
-
-            .meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.75rem;
-            }
-
-            .meta-item {
-                font-size: 0.85rem;
+            .scroll-indicator {
+                bottom: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            body {
-                font-size: 18px;
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
 
             .container {
@@ -369,57 +418,55 @@
             .nav-inner {
                 padding: 0 1rem;
             }
+        }
 
-            .nav {
-                margin: 0 -1rem 2rem -1rem;
+        /* Performance optimisations */
+        .hero,
+        .nav {
+            will-change: transform;
+        }
+
+        .hero-content {
+            will-change: transform;
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+
+            .hero,
+            .page,
+            .nav,
+            .hero-content,
+            .nav-link {
+                transition: none;
             }
 
-            .title {
-                font-size: 2rem;
+            .status-indicator {
+                animation: none;
             }
 
-            .subtitle {
-                font-size: 1.1rem;
+            .scroll-indicator {
+                animation: none;
             }
 
-            .code-figure {
-                margin: 2rem -1rem;
-            }
-
-            .code-header {
-                padding: 0.75rem 1rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .code-content {
-                padding: 1rem;
-                font-size: 0.75rem;
-            }
-
-            .abstract {
-                padding: 1rem;
-                font-size: 0.95rem;
+            .hero-title,
+            .hero-subtitle,
+            .hero-meta {
+                animation: none;
             }
         }
 
-        /* Print styles */
-        @media print {
-
-            .nav,
-            .reading-progress {
-                display: none;
-            }
-
-            .page {
-                box-shadow: none;
-            }
-
-            body {
-                background: white;
-                font-size: 12pt;
-            }
+        #motion-warning {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #fff5f7;
+            border-left: 4px solid var(--accent);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0.2rem 0rem 0.2rem;
+            max-width: 900px;
+            text-align: center;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -427,38 +474,48 @@
 <body>
     <div class="reading-progress"></div>
 
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="#hero" class="nav-link active">HOME</a>
+                <a href="#systems" class="nav-link">SYSTEMS</a>
+                <a href="#work" class="nav-link">WORK</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="motion-warning" style="display: none;"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Lorem Ipsum</h1>
+            <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span class="status-indicator"></span>
+                    <span class="sans">Available for Co-op • Summer 2026</span>
+                </div>
+                <div class="hero-meta-item sans">
+                    <span>University of Waterloo</span>
+                </div>
+                <div class="hero-meta-item sans">
+                    <span>Computer Science, Digital Hardware Specialization</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
     <article class="page">
         <div class="container">
-            <header class="header">
-                <h1 class="title">Lorem Ipsum</h1>
-                <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div class="meta">
-                    <div class="meta-item">
-                        <span class="status-indicator"></span>
-                        <span class="sans">Available for Co-op • Summer 2026</span>
-                    </div>
-                    <div class="meta-item sans">
-                        <span>University of Waterloo</span>
-                    </div>
-                    <div class="meta-item sans">
-                        <span>Computer Science, Digital Hardware Specialisation</span>
-                    </div>
-                </div>
-            </header>
-
-            <nav class="nav">
-                <div class="nav-inner">
-                    <div class="nav-links">
-                        <a href="#NAVBAR1" class="nav-link active">NAVBAR1</a>
-                        <a href="#NAVBAR2" class="nav-link">NAVBAR2</a>
-                        <a href="#NAVBAR3" class="nav-link">NAVBAR3</a>
-                        <a href="#NAVBAR4" class="nav-link">NAVBAR3</a>
-                    </div>
-                </div>
-            </nav>
-
             <main class="content">
-                <section id="NAVBAR1" class="section">
+                <section id="systems" class="section">
                     <h2 class="section-title">Nullam Vulputate Molestie Magna Vitae Ultricies</h2>
 
                     <p>Suspendisse iaculis neque sapien, non vulputate arcu varius id. Mauris nulla lectus, tempus ut
@@ -475,8 +532,8 @@
                         efficitur vel vel velit. In hac habitasse platea dictumst. Praesent pellentesque sem ut magna
                         euismod posuere.</p>
                 </section>
+                <section id="work" class="section">
 
-                <section id="NAVBAR2" class="section">
                     <h2 class="section-title">Mauris finibus dui leo, quis ornare elit hendrerit posuere</h2>
 
                     <p>Phasellus semper, tellus ac hendrerit dignissim, felis risus gravida nibh, eu volutpat tortor sem
@@ -488,13 +545,16 @@
                         condimentum est elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam
                         placerat risus nec laoreet aliquet. Sed gravida consequat ligula cursus fermentum. Integer a
                         ante vel neque tristique tempor vitae a leo.</p>
-                        <br/>
+
+                    <br />
 
                     <p>Cras sit amet urna molestie urna pharetra mattis eget ac dui. Aenean mollis mattis turpis a
                         rhoncus. Proin blandit rutrum arcu nec finibus. Nulla vulputate libero a mollis euismod. Donec
                         et lacus viverra, volutpat leo eu, placerat justo. Sed sed justo at sapien pellentesque
                         efficitur vel vel velit. In hac habitasse platea dictumst. Praesent pellentesque sem ut magna
                         euismod posuere.</p>
+
+                    <br />
 
                     <p>Donec vitae rutrum dolor. Mauris id mattis nisl. Phasellus sed ex placerat ante placerat eleifend
                         sed vitae purus. Vestibulum et sem nec libero auctor tempus. Aenean sagittis ornare magna, in
@@ -507,74 +567,259 @@
 
                 </section>
             </main>
-
-            <footer class="footer">
-                <p>Designed for machines to load. Optimised for humans to read.</p>
-            </footer>
         </div>
     </article>
 
+    <br />
+
+    <article class="page">
+        <div class="container">
+            <main class="content">
+                <section id="systems2" class="section">
+                    <h2 class="section-title">Nullam Vulputate Molestie Magna Vitae Ultricies</h2>
+
+                    <p>Suspendisse iaculis neque sapien, non vulputate arcu varius id. Mauris nulla lectus, tempus ut
+                        egestas eu, rhoncus vitae libero. Curabitur in posuere sapien. Cras interdum convallis nisl, nec
+                        rhoncus turpis accumsan eget. Etiam luctus nulla a risus venenatis, ut hendrerit neque
+                        scelerisque. Maecenas quis erat nisi. Praesent sit amet arcu at massa volutpat feugiat. In
+                        feugiat, turpis vel posuere vulputate, sapien massa tincidunt quam, bibendum rutrum magna leo et
+                        magna. Morbi ut lobortis nisi. Pellentesque id vestibulum justo. Aenean non dolor ac urna varius
+                        molestie.</p>
+
+                    <p>Cras sit amet urna molestie urna pharetra mattis eget ac dui. Aenean mollis mattis turpis a
+                        rhoncus. Proin blandit rutrum arcu nec finibus. Nulla vulputate libero a mollis euismod. Donec
+                        et lacus viverra, volutpat leo eu, placerat justo. Sed sed justo at sapien pellentesque
+                        efficitur vel vel velit. In hac habitasse platea dictumst. Praesent pellentesque sem ut magna
+                        euismod posuere.</p>
+                </section>
+                <section id="work2" class="section">
+
+                    <h2 class="section-title">Mauris finibus dui leo, quis ornare elit hendrerit posuere</h2>
+
+                    <p>Phasellus semper, tellus ac hendrerit dignissim, felis risus gravida nibh, eu volutpat tortor sem
+                        non turpis. Curabitur at dolor sem. Cras tincidunt fermentum vestibulum. Cras aliquam convallis
+                        justo et ullamcorper. Etiam ullamcorper porttitor interdum. Vivamus purus libero, porta in purus
+                        sit amet, blandit bibendum ante. Vestibulum gravida hendrerit neque. Fusce varius, felis eget
+                        consectetur euismod, quam urna venenatis elit, eget dapibus urna ipsum nec dui. Duis dapibus
+                        nisi et elit rutrum accumsan. Praesent ac gravida nisi. Sed suscipit nulla at diam accumsan, a
+                        condimentum est elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam
+                        placerat risus nec laoreet aliquet. Sed gravida consequat ligula cursus fermentum. Integer a
+                        ante vel neque tristique tempor vitae a leo.</p>
+
+                    <br />
+
+                    <p>Cras sit amet urna molestie urna pharetra mattis eget ac dui. Aenean mollis mattis turpis a
+                        rhoncus. Proin blandit rutrum arcu nec finibus. Nulla vulputate libero a mollis euismod. Donec
+                        et lacus viverra, volutpat leo eu, placerat justo. Sed sed justo at sapien pellentesque
+                        efficitur vel vel velit. In hac habitasse platea dictumst. Praesent pellentesque sem ut magna
+                        euismod posuere.</p>
+
+                    <br />
+
+                    <p>Donec vitae rutrum dolor. Mauris id mattis nisl. Phasellus sed ex placerat ante placerat eleifend
+                        sed vitae purus. Vestibulum et sem nec libero auctor tempus. Aenean sagittis ornare magna, in
+                        volutpat quam fermentum et. Morbi vitae est velit. Pellentesque consequat eget felis quis
+                        tempus. Mauris neque nibh, pulvinar in justo euismod, elementum mollis metus. Morbi placerat
+                        nisi a pellentesque posuere. Phasellus ultrices pellentesque felis, et aliquam orci mattis id.
+                        Fusce lobortis lacus in iaculis maximus. Vivamus non accumsan lorem, pellentesque venenatis
+                        elit. Donec imperdiet enim ante, aliquam dapibus diam egestas sit amet. Etiam lorem ex, bibendum
+                        ac eros ac, accumsan ornare est. Nam nec sapien placerat, tincidunt arcu eu, aliquam nisl.</p>
+
+                </section>
+            </main>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>Designed for machines to load. Optimised for humans to read.</p>
+    </footer>
+
     <script>
-        // Reading progress indicator
-        function updateReadingProgress() {
-            const article = document.querySelector('.page');
-            const progressBar = document.querySelector('.reading-progress');
 
-            const scrollTop = window.pageYOffset;
-            const docHeight = article.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
+        let isAutoScrolling = false;
+        let autoScrollTimeout;
 
-            progressBar.style.width = Math.min(Math.max(scrollPercent, 0), 100) + '%';
+        let ticking = false;
+        let lastScrollY = 0;
+
+        const hero = document.querySelector('.hero');
+        const page = document.querySelector('.page');
+        const nav = document.querySelector('.nav');
+        const progressBar = document.querySelector('.reading-progress');
+        const heroContent = document.querySelector('.hero-content');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReducedMotion) {
+            const warning = document.getElementById('motion-warning');
+            warning.innerText = 'Animations and transitions are disabled due to your system’s reduced motion preference.';
+            warning.style.display = 'block';
+        }
+
+        // Scroll arrow behaviour
+        const scrollArrow = document.querySelector('.scroll-indicator');
+
+        if (scrollArrow) {
+            scrollArrow.addEventListener('click', () => {
+                const navHeight = nav.offsetHeight || 60;
+                const nextSection = document.querySelector('main .section');
+
+                if (nextSection) {
+                    isAutoScrolling = true;
+
+                    const targetOffset = nextSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+
+                    window.scrollTo({
+                        top: targetOffset,
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    });
+
+                    // Clear auto-scroll after a short delay
+                    clearTimeout(autoScrollTimeout);
+                    autoScrollTimeout = setTimeout(() => {
+                        isAutoScrolling = false;
+                    }, 1000);
+                }
+            });
+        }
+
+        // Update active navigation link based on scroll position
+        function updateActiveSection() {
+            const scrollY = window.scrollY;
+            let closestSection = null;
+            let minDistance = Infinity;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const distance = Math.abs(rect.top);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestSection = section;
+                }
+            });
+
+            if (closestSection) {
+                const current = closestSection.id;
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        // Update scroll-related elements (nav visibility, progress bar, active section)
+        function updateScrollElements() {
+            const scrollY = window.pageYOffset;
+            const heroHeight = hero.offsetHeight;
+
+            const scrollProgress = Math.min(scrollY / (heroHeight * 0.8), 1);
+
+            // Hero fade effect and show/hide nav and progress
+            if (scrollY < heroHeight * 0.3) {
+                nav.classList.remove('visible');
+                progressBar.classList.remove('visible');
+            } else {
+                nav.classList.add('visible');
+                progressBar.classList.add('visible');
+
+                // Reading progress bar
+                const pageTop = heroHeight;
+                const pageScrollY = Math.max(0, scrollY - pageTop);
+                const pageHeight = page.offsetHeight - window.innerHeight;
+                const readingProgress = Math.min(Math.max((pageScrollY / pageHeight) * 100, 0), 100);
+
+                progressBar.style.width = readingProgress + '%';
+            }
+
+            if (!isAutoScrolling) {
+                updateActiveSection();
+            }
+
+            lastScrollY = scrollY;
+            ticking = false;
+        }
+
+        // Scroll throttling
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollElements);
+                ticking = true;
+            }
         }
 
         // Smooth scroll navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
 
-                    // Update active state
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
+                const targetId = link.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                const navHeight = nav.offsetHeight || 60;
+
+                let targetOffset = 0;
+
+                if (target && targetId !== 'hero') {
+                    targetOffset = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
                 }
+
+                // Set the flag to prevent active section updates
+                isAutoScrolling = true;
+
+                // Clear any previous timeout just in case
+                if (autoScrollTimeout) clearTimeout(autoScrollTimeout);
+
+                // Manual update of nav active state
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Start scroll
+                window.scrollTo({
+                    top: targetOffset,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+
+                // Fallback timeout: in case scrollend isn't supported
+                autoScrollTimeout = setTimeout(() => {
+                    isAutoScrolling = false;
+                }, 1200); // a bit longer than expected scroll
             });
         });
 
-        // Update navigation on scroll
-        function updateActiveSection() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 100) {
-                    current = section.getAttribute('id');
+        ['wheel', 'touchstart', 'keydown'].forEach(event => {
+            window.addEventListener(event, () => {
+                if (isAutoScrolling) {
+                    isAutoScrolling = false;
+                    clearTimeout(autoScrollTimeout);
                 }
-            });
+            }, {passive: true});
+        });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+        if ('onscrollend' in window) {
+            window.addEventListener('scrollend', () => {
+                isAutoScrolling = false;
             });
         }
 
-        // Event listeners
+        // Scroll listener
         window.addEventListener('scroll', () => {
-            updateReadingProgress();
-            updateActiveSection();
-        });
+            requestTick();
+        }, {passive: true});
+
+        // Handle resize events
+        window.addEventListener('resize', () => {
+            setTimeout(() => {
+                updateScrollElements();
+            }, 100);
+        }, {passive: true});
 
         // Initialise
-        updateReadingProgress();
-        updateActiveSection();
+        updateScrollElements();
     </script>
 </body>
 
