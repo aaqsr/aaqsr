@@ -16,7 +16,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 if (prefersReducedMotion) {
     const warning = document.getElementById('motion-warning');
-    warning.innerText = 'Animations and transitions are disabled due to your system’s reduced motion preference.';
+    warning.innerText = 'Animations and transitions are disabled due to your system\'s reduced motion preference.';
     warning.style.display = 'block';
 }
 
