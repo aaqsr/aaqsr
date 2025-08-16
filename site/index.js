@@ -91,11 +91,18 @@ function updateScrollElements() {
         progressBar.classList.add('visible');
 
         // Reading progress bar
-        const pageTop = heroHeight;
-        const pageScrollY = Math.max(0, scrollY - pageTop);
-        const pageHeight = page.offsetHeight - window.innerHeight;
-        const readingProgress = Math.min(Math.max((pageScrollY / pageHeight) * 100, 0), 100);
+        // Calculate total height of all `.page` articles
+        const pages = document.querySelectorAll('.page');
+        let totalPageHeight = 0;
+        let pageTop = hero.offsetHeight;
 
+        pages.forEach(page => {
+            totalPageHeight += page.offsetHeight;
+        });
+
+        const scrollableHeight = totalPageHeight - window.innerHeight;
+        const pageScrollY = Math.max(0, scrollY - pageTop);
+        const readingProgress = Math.min(Math.max((pageScrollY / scrollableHeight) * 100, 0), 100);
         progressBar.style.width = readingProgress + '%';
     }
 
