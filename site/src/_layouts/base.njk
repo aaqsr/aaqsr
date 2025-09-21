@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} | {% endif %}Awab Q.</title>
+
+    <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Awab Q.">
+    <meta property="og:description" content="{{ description or 'A math & computer science student at the University of Waterloo, specialising in Digital Hardware.' }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://awabq.com{{ page.url }}">
+    <meta property="og:image" content="https://awabq.com/apple-touch-icon.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}Awab Q.">
+    <meta name="twitter:description" content="{{ description or 'Math & CS student at the University of Waterloo.' }}">
+    <meta name="twitter:image" content="https://awabq.com/apple-touch-icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <link rel="canonical" href="https://awabq.com{{ page.url }}">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="reading-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="#hero" class="nav-link active">HOME</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#experience" class="nav-link">EXPERIENCE</a>
+                <a href="#projects" class="nav-link">PROJECTS</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="motion-warning" style="display: none;"></div>
+
+    {{ content | safe }}
+
+    <footer class="footer">
+        <p>Designed for machines to load. Optimised for humans to read.</p>
+    </footer>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>

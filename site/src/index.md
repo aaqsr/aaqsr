@@ -1,0 +1,94 @@
+---
+layout: base.njk
+title: ""
+description: "A math & computer science student at the University of Waterloo, specialising in Digital Hardware."
+---
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Awab Qureshi</h1>
+        <p class="hero-subtitle">Building systems in real-time.</p>
+        <div class="hero-meta">
+            <div class="hero-meta-item sans">
+                <span>Math & Computer Science @ the University of Waterloo</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="status-indicator"></span>
+                <span class="sans">Available for Co-op • Summer 2026</span>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<br>
+<article class="page">
+    <div class="container">
+        <main class="content">
+            <section id="about" class="section">
+                <h2 class="section-title">About</h2>
+                <p>I'm a fourth-year Mathematics and Computer Science student at the University of Waterloo, and I am specialising in Digital Hardware.</p>
+                <br>
+                <p>My work spans computer graphics, concurrent embedded systems, and low-level programming. From simulating fluids in real-time, to writing C++ for projection mapping computer vision systems, to building custom SPI drivers for STM32 microcontrollers.</p>
+                <br>
+                <p>I'm drawn to problems that sit at the intersection of hardware and software, where performance matters and every cycle counts. Systems that are both mathematically rigorous and practically useful. I believe the best engineering happens when you understand the problem from first principles, then build elegant solutions that scale.</p>
+                <br>
+            </section>
+            <section id="experience" class="section">
+                <h2 class="section-title">Experience</h2>
+                <p>Since September, I’ve been working at Huawei as a Software Engineering Co-op. I’m part of the <strong>Data and Privacy Protection Lab</strong>, where I’m researching optimisations for the compiler that handles Access Control Policy scripts in the HarmonyOS kernel.</p>
+                <br>
+                <p>Previously, I was a Software Engineering Co-op on the <strong>Projection Mapping</strong> team at Christie Digital Systems. There, I worked on production systems that demand precision and are driven by a lovely old, mature, legacy C++ code-base. I characterised some computer vision algorithms, extended binary encoders to communicate with projectors for multi-colour projection, and researched solutions to optical distortion errors in sensors with some Python data analysis.</p>
+                <br>
+                <p>I have also served as a <strong>Software Engineering Teaching Assistant</strong> at Waterloo, maintaining Linux server infrastructure and teaching C++ and object-oriented design to second-year students. And I once worked as a <strong>Full-Stack Developer</strong> at Expresume, where I built backend systems with PostgreSQL and AWS.</p>
+                <br>
+                <p>Beyond the classroom, I've been <strong>President of the Mathematics Society</strong>, representing over 7,000 students and managing a $100,000 budget, and I'm an active <strong>Editor at mathNEWS</strong>, Waterloo's beloved campus publication.</p>
+            </section>
+        </main>
+    </div>
+</article>
+
+<br>
+
+<article class="page">
+    <div class="container">
+        <main class="content">
+            <section id="projects" class="section">
+                <h2 class="section-title">Selected Projects</h2>
+                <p><strong>Water Simulation Engine</strong> — Built a real-time fluid dynamics system using OpenGL and C++. Utilised the shallow water equations to create a height-field simulation and added interaction with rigid bodies. The project also features a physics engine built from scratch with an inertia tensor integrator and bounding box collisions. <em>See more <a href="https://github.com/aaqsr/cs488-project" style="color: var(--accent); text-decoration: none;">here</a>.</em></p>
+                <br>
+                <p><strong>Handheld Game Console</strong> — Designed and built from scratch using an STM32 MCU, complete with custom 3D-printed housing. Wrote embedded C++ with a custom event loop architecture and SPI display driver optimised for partial rendering and power efficiency.</p>
+                <br>
+                <p><strong>Lambda Calculus Interpreter</strong> — Implemented a complete interpreter supporting currying, Y-combinator recursion, and alpha-beta reduction. Featured a custom linear memory allocator designed for performance and memory safety in functional language evaluation.</p>
+            </section>
+            <section id="contact" class="section">
+                <h2 class="section-title">Get in Touch</h2>
+                <p>I'm always interested in discussing interesting problems, whether that is embedded systems, multithreading and concurrency, computer graphics, or really anything in mathematics or engineering.</p>
+                <br>
+                <p>Currently I am also seeking co-op opportunities for <strong>Summer 2026</strong> (i.e. start of May till end of August). I'm particularly drawn to roles involving systems programming, computer graphics, FPGA development, or any work that lets me solve high-level problems whilst staying close to hardware.</p>
+                <br>
+                <p>Priorities for me when job-seeking include (<em>in order!</em>) great and interesting,</p>
+                <ol style="margin-left: 2rem;">
+                    <li>people,</li>
+                    <li>problems, and</li>
+                    <li>poutine.</li>
+                </ol>
+                <div class="hero-meta" style="margin-top: 2rem;">
+                    <div class="hero-meta-item sans">
+                        <span><strong>Email:</strong> awab [dot] qureshi [at] uwaterloo [dot] ca</span>
+                    </div>
+                    <div class="hero-meta-item sans">
+                        <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/awabq" style="color: var(--accent); text-decoration: none;">awabq</a></span>
+                    </div>
+                    <div class="hero-meta-item sans">
+                        <span><strong>GitHub:</strong> <a href="https://github.com/aaqsr" style="color: var(--accent); text-decoration: none;">aaqsr</a></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</article>
