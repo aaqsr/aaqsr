@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">{{ heroTitle or "Awab Qureshi" }}</h1>
+        <p class="hero-subtitle">{{ heroSubtitle or "Building systems in real-time." }}</p>
+        <div class="hero-meta">
+            <div class="hero-meta-item sans">
+                <span>{{ heroMeta or "Math & Computer Science @ the University of Waterloo" }}</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="status-indicator"></span>
+                <span class="sans">{{ heroStatus or "Available for Co-op • Summer 2026" }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+{% include "_includes/content.njk" %}

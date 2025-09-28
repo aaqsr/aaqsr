@@ -235,6 +235,10 @@ body {
     font-weight: 500;
 }
 
+.section ol {
+    margin-left: 2rem;
+}
+
 /* Footer */
 .footer {
     border-top: 1px solid var(--border-light);

@@ -6,11 +6,12 @@
         "build": "npm-run-all clean build:*",
         "build:11ty": "eleventy",
         "build:css": "postcss src/css/index.css -o _site/css/index.css",
-        "dev": "npm-run-all clean --parallel dev:*",
+        "dev": "npm-run-all clean build:css --parallel dev:*",
         "dev:11ty": "eleventy --serve --port=3000",
         "dev:css": "postcss src/css/index.css -o _site/css/index.css --watch",
         "clean": "rm -rf _site",
-        "deploy": "npm run build && gh-pages -d _site"
+        "deploy": "npm run build && gh-pages -d _site",
+        "debug": "npm run clean && npm run build:css && npm run dev:11ty"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",

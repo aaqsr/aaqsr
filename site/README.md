@@ -23,3 +23,8 @@ To deploy manually:
 ```bash
 bun run deploy
 ```
+
+# TODO
+
+- add a way to browse course pages
+- add a way to get back to home page from the course page
