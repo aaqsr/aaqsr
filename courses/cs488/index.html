@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awab Q.</title>
+
+    <meta property="og:title" content="Awab Q.">
+    <meta property="og:description" content="A math &amp; computer science student at the University of Waterloo, specialising in Digital Hardware.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://awabq.com/courses/cs488/">
+    <meta property="og:image" content="https://awabq.com/apple-touch-icon.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Awab Q.">
+    <meta name="twitter:description" content="Math &amp; CS student at the University of Waterloo.">
+    <meta name="twitter:image" content="https://awabq.com/apple-touch-icon.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <link rel="canonical" href="https://awabq.com/courses/cs488/">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="reading-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="#hero" class="nav-link active">HOME</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#experience" class="nav-link">EXPERIENCE</a>
+                <a href="#projects" class="nav-link">PROJECTS</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="motion-warning" style="display: none;"></div>
+
+    
+<br/>
+<br/>
+
+<article class="page">
+    <div class="container">
+        <main class="content">
+            <h1>CS 488: Computer Graphics</h1>
+<div class="section">
+<h2 id="final-project" class="section-title">Final Project</h2>
+<p>This was quite the intense project since it was done from near scratch in C++ (our only dependency was a barebones linear algebra library, along with a windowing library).
+My partner (Palaksha Drolia) and I spent about a month writing over 7000 lines of code,
+with me handling the multithreading and water simulation, and him handling the rigid body simulation.
+Coupling the two was an intense process that took us both many hours of debugging.</p>
+<p>I am quite proud of the results that you can see in the demo video below,</p>
+<div class="video-container">
+<iframe
+    src="https://www.youtube.com/embed/6L5K9m5ZTMM?start=103&autoplay=1&mute=1&vq=hd2160"
+    title="YouTube video player"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+</iframe>
+</div>
+<p>The source for the project is available on <a href="https://github.com/aaqsr/cs488-project">github</a> in hopes that it can be useful.</p>
+<p>The project culminated in a short technical report which one can read <a href="./report.pdf">here</a>.</p>
+<p>The codebase features two custom multithreading primitives, both exposing a channel API.
+One is a lock-free triple buffer for real-time communication between the physics and render threads, and one is a message queue for the logger, and other systems.
+There is also a custom OBJ loader and JSON parser which enables the storing and loading of custom scenes defined by the user.</p>
+
+</div>
+        </main>
+    </div>
+</article>
+
+
+
+    <footer class="footer">
+        <p>Designed for machines to load. Optimised for humans to read.</p>
+    </footer>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>
