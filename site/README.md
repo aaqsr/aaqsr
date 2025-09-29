@@ -26,5 +26,6 @@ bun run deploy
 
 # TODO
 
+- fix bug of home not being highlighted on navbar on main page. just make the navbar non-dynamic honestly
 - add a way to browse course pages
 - add a way to get back to home page from the course page
