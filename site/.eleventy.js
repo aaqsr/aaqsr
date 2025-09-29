@@ -39,7 +39,6 @@ module.exports = function(eleventyConfig) {
     });
 
     // copy static assets
-    eleventyConfig.addPassthroughCopy("CNAME");
     eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/assets");
 
