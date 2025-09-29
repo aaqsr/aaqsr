@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} | {% endif %}Awab Q.</title>
 
     <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Awab Q.">
-    <meta property="og:description" content="{{ description or 'A math & computer science student at the University of Waterloo, specialising in Digital Hardware.' }}">
+    <meta property="og:description"
+        content="{{ description or 'A math & computer science student at the University of Waterloo, specialising in Digital Hardware.' }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://awabq.com{{ page.url }}">
     <meta property="og:image" content="https://awabq.com/apple-touch-icon.png">
@@ -24,11 +26,12 @@
     <link rel="canonical" href="https://awabq.com{{ page.url }}">
     <link rel="stylesheet" href="/css/index.css">
 </head>
+
 <body>
     <div class="reading-progress"></div>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav {{ navstyles or 'visible' }}">
         <div class="nav-inner">
             <div class="nav-links">
                 <a href="#hero" class="nav-link active">HOME</a>
@@ -50,4 +53,5 @@
 
     <script src="/js/index.js"></script>
 </body>
+
 </html>

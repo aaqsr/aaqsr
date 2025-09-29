@@ -1,6 +1,7 @@
 ---
 layout: page.njk
 redirect_from: [/488, /cs488]
+navstyles: " "
 ---
 
 # CS 488: Computer Graphics

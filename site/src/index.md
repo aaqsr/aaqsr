@@ -47,15 +47,19 @@ Priorities for me when job-seeking include (*in order!*) great and interesting,
 3. poutine.
 
 <br />
-<div class="flex flex-wrap gap-8 md:gap-3 md:flex-col md:items-start items-center text-base text-text-primary mt-8">
-    <div class="flex items-center gap-2 sans">
+
+Feel free to email me at my address below (written this way to avoid spam from robots reading the site).
+You can catch a glimpse of what I am up to on my Linkedin and Github, although they might be seldom up-to-date with reality.
+
+<br />
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; font-size: 18px; color: #1a1a1a;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;">
         <span><strong>Email:</strong> awab [dot] qureshi [at] uwaterloo [dot] ca</span>
     </div>
-    <div class="flex items-center gap-2 sans">
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;">
         <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/awabq">awabq</a></span>
     </div>
-    <div class="flex items-center gap-2 sans">
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;">
         <span><strong>GitHub:</strong> <a href="https://github.com/aaqsr">aaqsr</a></span>
     </div>
 </div>
-
