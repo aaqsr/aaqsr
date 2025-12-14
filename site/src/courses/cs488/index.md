@@ -31,4 +31,16 @@ The project culminated in a short technical report which one can read [here](./r
 
 The codebase features two custom multithreading primitives, both exposing a channel API.
 One is a lock-free triple buffer for real-time communication between the physics and render threads, and one is a message queue for the logger, and other systems.
+**Update**: I gave a short talk on the triple buffer design at the [Cpp North](https://cppnorth.ca) conference in summer 2025,
+
+<div class="video-container">
+<iframe
+    src="https://www.youtube.com/embed/ELYEZQOhS9U"
+    title="YouTube video player"
+    frameborder="0"
+    allow="encrypted-media"
+    allowfullscreen>
+</iframe>
+</div>
+
 There is also a custom OBJ loader and JSON parser which enables the storing and loading of custom scenes defined by the user.
