@@ -43,7 +43,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
 
     eleventyConfig.addPassthroughCopy({ "src/courses/cs488/report.pdf": "courses/cs488/report.pdf" });
-
+    eleventyConfig.addPassthroughCopy("src/resume.pdf");
+    
     // copy CSS
     eleventyConfig.addPassthroughCopy({ "src/css": "css" });
 
