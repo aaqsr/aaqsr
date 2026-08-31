@@ -5,7 +5,7 @@ description: "A math & computer science student at the University of Waterloo, s
 heroTitle: "Awab Qureshi"
 heroSubtitle: "Building systems in real-time."
 heroMeta: "Math & Computer Science @ the University of Waterloo"
-heroStatus: "Available for Co-op • Summer 2026"
+heroStatus: "Available for New Grad Roles • Summer 2027"
 ---
 
 ## About { #about }
@@ -18,7 +18,11 @@ I'm drawn to problems that sit at the intersection of hardware and software, whe
 
 ## Experience { #experience }
 
-Since September, I've been working at Huawei as a Software Engineering Co-op. I'm part of the **Data and Privacy Protection Lab**, where I'm researching optimisations for the compiler that handles Access Control Policy scripts in the HarmonyOS kernel.
+Starting September 2026, I'll be joining **Geotab** as a Software Developer Intern, working on C# data pipelines.
+
+From May to August 2026, I worked as a **C++ Developer Co-op** at GTS (Global Trading Systems), rebuilding a real-time data reconciliation engine that processes the firm's financial order-log data from two Kafka sources at ~100K messages/sec.
+
+From September to December 2025, I worked at Huawei as a Software Engineering Co-op. I was part of the **Data and Privacy Protection Lab**, where I researched optimisations for the compiler that handles Access Control Policy scripts in the HarmonyOS kernel.
 
 Previously, I was a Software Engineering Co-op on the **Projection Mapping** team at Christie Digital Systems. There, I worked on production systems that demand precision and are driven by a lovely old, mature, legacy C++ code-base. I characterised some computer vision algorithms, extended binary encoders to communicate with projectors for multi-colour projection, and researched solutions to optical distortion errors in sensors with some Python data analysis.
 
@@ -38,7 +42,7 @@ Beyond the classroom, I've been **President of the Mathematics Society**, repres
 
 I'm always interested in discussing interesting problems, whether that is embedded systems, multithreading and concurrency, computer graphics, or really anything in mathematics or engineering.
 
-Currently I am also seeking co-op opportunities for **Summer 2026** (i.e. start of May till end of August). I'm particularly drawn to roles involving systems programming, computer graphics, FPGA development, or any work that lets me solve high-level problems whilst staying close to hardware.
+Currently I am also seeking new grad roles beginning **Summer 2027**. I'm particularly drawn to roles involving systems programming, computer graphics, FPGA development, or any work that lets me solve high-level problems whilst staying close to hardware.
 
 Priorities for me when job-seeking include (*in order!*) great and interesting,
 
