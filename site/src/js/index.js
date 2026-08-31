@@ -191,3 +191,20 @@ window.addEventListener('resize', () => {
 
 // Initialize on load
 updateScrollElements();
+
+// Back-link: if we arrived here via a same-site link, going back restores
+// the exact scroll position we left from (native browser behaviour).
+// Otherwise (typed/bookmarked/external), fall back to its plain href="/".
+const backLink = document.querySelector('.back-link');
+if (backLink && window.history.length > 1) {
+    try {
+        if (new URL(document.referrer).origin === window.location.origin) {
+            backLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                history.back();
+            });
+        }
+    } catch (_) {
+        // document.referrer was empty/invalid so leave the default link behaviour.
+    }
+}

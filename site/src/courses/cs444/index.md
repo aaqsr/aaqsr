@@ -6,6 +6,8 @@ navstyles: " "
 
 # CS 444: Compiler Construction
 
+## The Java Compiler
+
 This was a term-long project done in a team of three. Our job? Building a Java 1.3 to i386 compiler, from scratch, in a language of our choice.
 
 Because one learns best by being thrown in the deep end, we picked Rust to be this language. Our compiler was about 15,000 lines by the end, hand-rolled through a 7-stage pipeline: lexer, LALR(1) parser generator, parser, an AST transformer, a static semantic analyser, a type checker, and finally an x86 code generator.

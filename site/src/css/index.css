@@ -196,6 +196,16 @@ h1 {
     color: var(--text-primary);
 }
 
+.back-link {
+    color: var(--text-muted);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
 .nav-link.active::after {
     content: '';
     position: absolute;

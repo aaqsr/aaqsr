@@ -20,11 +20,11 @@ I'm drawn to problems that sit at the intersection of hardware and software, whe
 
 Starting September 2026, I'll be joining **Geotab** as a Software Developer Intern, working on C# data pipelines.
 
-From May to August 2026, I worked as a **C++ Developer Co-op** at GTS (Global Trading Systems), rebuilding a real-time data reconciliation engine that processes the firm's financial order-log data from two Kafka sources at ~100K messages/sec.
+From May to August 2026, I worked as a C++ Developer Co-op at **GTS** (Global Trading Systems), rebuilding a **real-time data reconciliation engine** that processes the firm's financial order-log data from two Kafka sources at ~100K messages/sec.
 
-From September to December 2025, I worked at Huawei as a Software Engineering Co-op. I was part of the **Data and Privacy Protection Lab**, where I researched optimisations for the compiler that handles Access Control Policy scripts in the HarmonyOS kernel.
+From September to December 2025, I worked at **Huawei** as a Software Engineering Co-op. I was part of the **Data and Privacy Protection Lab**, where I researched optimisations for the compiler that handles Access Control Policy scripts in the HarmonyOS kernel.
 
-Previously, I was a Software Engineering Co-op on the **Projection Mapping** team at Christie Digital Systems. There, I worked on production systems that demand precision and are driven by a lovely old, mature, legacy C++ code-base. I characterised some computer vision algorithms, extended binary encoders to communicate with projectors for multi-colour projection, and researched solutions to optical distortion errors in sensors with some Python data analysis.
+Previously, I was a Software Engineering Co-op on the **Projection Mapping** team at **Christie Digital Systems**. There, I worked on production systems that demand precision and are driven by a lovely old, mature, legacy C++ code-base. I characterised some computer vision algorithms, extended binary encoders to communicate with projectors for multi-colour projection, and researched solutions to optical distortion errors in sensors with some Python data analysis.
 
 I have also served as a **Software Engineering Teaching Assistant** at Waterloo, maintaining Linux server infrastructure and teaching C++ and object-oriented design to second-year students. And I once worked as a **Full-Stack Developer** at Expresume, where I built backend systems with PostgreSQL and AWS.
 
@@ -33,6 +33,8 @@ Beyond the classroom, I've been **President of the Mathematics Society**, repres
 ## Selected Projects { #projects }
 
 **Water Simulation Engine** — Built a real-time fluid dynamics system using OpenGL and C++. Utilised the shallow water equations to create a height-field simulation and added interaction with rigid bodies. The project also features a physics engine built from scratch with an inertia tensor integrator and bounding box collisions. ***See a demo video and more [here](/courses/cs488/).***
+
+**Java Compiler** — Built a Java 1.3 to i386 compiler from scratch in Rust with a team of three, hand-rolling a 7-stage pipeline from lexer to x86 code generator. ***Read more about it [here](/courses/cs444/).***
 
 **Handheld Game Console** — Designed and built from scratch using an STM32 MCU, complete with custom 3D-printed housing. Wrote embedded C++ with a custom event loop architecture and SPI display driver optimised for partial rendering and power efficiency.
 
