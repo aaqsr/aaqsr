@@ -5,7 +5,7 @@ description: "A math & computer science student at the University of Waterloo, s
 heroTitle: "Awab Qureshi"
 heroSubtitle: "Building systems in real-time."
 heroMeta: "Math & Computer Science @ the University of Waterloo"
-heroStatus: "Available for New Grad Roles • Summer 2027"
+heroStatus: "Available for New Grad Roles in Fall 2027"
 ---
 
 ## About { #about }
@@ -18,7 +18,7 @@ I'm drawn to problems that sit at the intersection of hardware and software, whe
 
 ## Experience { #experience }
 
-Starting September 2026, I'll be joining **Geotab** as a Software Developer Intern, working on C# data pipelines.
+From September 2026 till the end of the year, I'm at **Geotab** as a Software Developer Intern, working on C# data pipelines.
 
 From May to August 2026, I worked as a C++ Developer Co-op at **GTS** (Global Trading Systems), rebuilding a **real-time data reconciliation engine** that processes the firm's financial order-log data from two Kafka sources at ~100K messages/sec.
 
@@ -44,7 +44,7 @@ Beyond the classroom, I've been **President of the Mathematics Society**, repres
 
 I'm always interested in discussing interesting problems, whether that is embedded systems, multithreading and concurrency, computer graphics, or really anything in mathematics or engineering.
 
-Currently I am also seeking new grad roles beginning **Summer 2027**. I'm particularly drawn to roles involving systems programming, computer graphics, FPGA development, or any work that lets me solve high-level problems whilst staying close to hardware.
+Currently I am also seeking new grad roles beginning **Fall 2027**. I'm particularly drawn to roles involving systems programming, computer graphics, FPGA development, or any work that lets me solve high-level problems whilst staying close to hardware.
 
 Priorities for me when job-seeking include (*in order!*) great and interesting,
 
